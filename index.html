@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-based Image</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Time is Haunting</h1>
+    <img id="timeImage" src="i7o.png" alt="Site broke lol dm Melody">
+
+    <script>
+        // Function to check the time and display the image at 3:33 PM
+        function checkTimeAndDisplayImage() {
+            const now = new Date();
+            const hours = now.getHours(); // Get the current hour
+            const minutes = now.getMinutes(); // Get the current minutes
+
+            // Check if it's exactly 3:33 PM (15:33)
+            if (hours === 15 && minutes === 33) {
+                document.getElementById("timeImage").style.display = "block"; // Show the image
+            }
+        }
+
+        // Check the time every second
+        setInterval(checkTimeAndDisplayImage, 1000);
+    </script>
+
+</body>
+</html>
